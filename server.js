@@ -1,7 +1,10 @@
 const express = require('express');
-const weather = require('./weathr.js');
+// const weather = require('./weathr.js');
 var app = express();
+var path = require('path');
 
+
+app.use(express.static(__dirname + "/views/stylesheets"));
 
 app.get('/', (request, response) => {
     response.render('index.hbs', {
@@ -10,19 +13,27 @@ app.get('/', (request, response) => {
 });
 
 
-app.get('/fetch', (request, response) => {
-    response.render('fetch.hbs', {
-        title: 'fetch',
+app.get('/menu', (request, response) => {
+    response.render('menu.hbs', {
+        title: 'menu',
+    });
+});
+app.get('/product', (request, response) => {
+    response.render('product.hbs', {
+        title: 'product',
+    });
+});
+app.get('/scoreKeeping', (request, response) => {
+    response.render('scoreKeeping.hbs', {
+        title: 'scoreKeeping',
+    });
+});
+app.get('/bill', (request, response) => {
+    response.render('bill.hbs', {
+        title: 'bill',
     });
 });
 
 
-app.get('/weather', (request, response) => {
-    var address = '4230 boundary';
-    weather.getAddress(address, (result) => {
-        response.send(result);
-
-    });
-});
 
 app.listen(8080);

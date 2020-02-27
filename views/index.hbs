@@ -3,13 +3,19 @@
 <head>
     <meta charset='utf-8'>
     <TITLE>{{title}}</TITLE>
+    <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 
-<body style="background: url(http://i.imgur.com/HF3Xxg1.jpg)">
-    <h1 style="color: white; text-align: center;">Hello</h1>
-    <h1 style="color: white; text-align: center;">Welcome to Peta's Final Exam!</h1>
-        <button id="searchButton" onclick="window.location.href='/fetch'">Gallary</button>
-        <button id="searchButton" onclick="window.location.href='/weather'">Weather</button>
+<body>
+    <h1 style="color: white; text-align: center;">我是主頁</h1>
+    <h1 style="color: white; text-align: center;"></h1>
+    <div class="row">
+        <button id="searchButton" class="btn btn--primary" onclick="window.location.href='/menu'">點菜</button>
+        <button id="searchButton" onclick="window.location.href='/product'">台球用品</button>
+        <button id="searchButton" onclick="window.location.href='/scoreKeeping'">計分板</button>
+        <button id="searchButton" onclick="window.location.href='/bill'">消費信息</button>
     </div>
 </body>
+
+
 </html>  
